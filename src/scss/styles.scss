@@ -1,0 +1,23 @@
+@import "bootstrap/scss/bootstrap";
+
+
+body {
+    background-color: #212529;
+}
+
+.modal-content {
+    color: rgb(185, 179, 179);
+}
+
+
+.modal-content.horizontal-shake {
+    animation: horizontal-shaking 0.35s infinite;
+  }
+
+@keyframes horizontal-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+  }
