@@ -6,22 +6,36 @@
     <title>Bootstrap w/ Webpack</title>
   </head>
   <body >
-    <div class="modal fade" id="exampleModal" data-bs-theme="dark" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Enter name or stay anonimus</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="input-group flex-nowrap">
-                <span class="input-group-text" id="addon-wrapping">@</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" id="input-name">
+      <div class="modal-section">
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Enter name or stay anonimus</h1>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+              </div>
+              <div class="modal-body">
+                <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="addon-wrapping">@</span>
+                  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" id="input-name">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="anon">Close and anon</button>
+                <button type="button" class="btn btn-primary" id="setname">Save changes</button>
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="setname">Save changes</button>
+          </div>
+        </div>
+      </div>
+      <div class="chat-section">
+        <div class="container text-center">
+          <div class="row align-items-end">
+            <div class="col-sm-10">
+              <input class="form-control" type="text" placeholder="your msg" aria-label="default input example" id="inputMsg">
+            </div>
+            <div class="col-1">
+              <button type="button" class="btn btn-outline-light" id="btnSend">Send</button>
             </div>
           </div>
         </div>
