@@ -15,7 +15,11 @@ server.register(fastifyStatic,{
     root: path.join(__dirname, '../dist')
 })
 
-server.listen({port : 5500},)
+
+const port = process.env.PORT ||  5555
+const host = process.env.HOST  || 'localhost'
+
+server.listen({port,host},)
 .then(() => {
     console.log(`http://localhost:5500/`)
 })
@@ -26,11 +30,13 @@ const wss = new WebSocketServer({port : 5555})
 
 wss.on('connection',client => { // event if client connection to server
     client.on('message', (data)=> {
-        console.log('i got something', data.toString())
+        const parsedData = JSON.parse(data);
         wss.clients.forEach(c => {
-            if (c !== client) {
-                c.send('other client sent ' + data)
-            }
+            c.send(JSON.stringify({ received: true, data: parsedData }))
+            // if (c !== client) {
+                
+            // }
+
         })
     })
 })

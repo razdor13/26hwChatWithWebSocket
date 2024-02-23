@@ -1,10 +1,10 @@
 @import "bootstrap/scss/bootstrap";
-
-
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Kode+Mono:wght@400..700&display=swap');
 body {
+    height: 100vh;
     background-color: #212529;
 }
-
 
 
 
@@ -31,10 +31,55 @@ body {
 }
 
 .container {
-  
   color: aliceblue;
-  .row {
-    height: 100vh;
-    padding-bottom: 20px;
+  .row.align-items-end {
+    overflow: hidden;
+    height: 90vh;
+    
+    .col-sm-10 {
+      height: 85vh;
+      width: 91%;
+      overflow-y: auto; /* Дозволити прокрутку по вертикалі */
+      scroll-behavior: smooth; /* Плавна прокрутка */
+      padding-bottom: 10px;
+      .card-body{
+        
+        padding: 10px;
+        margin-top: 5px;
+        display: flex;
+        .info-msg{
+          color: rgb(13, 177, 232);
+          gap: 5px;
+          max-width: 200px;
+          display: flex;
+          flex-direction: row;
+          font-size: 15px;
+          font-family: "Kode Mono", monospace;
+          font-optical-sizing: auto;
+          font-weight: 400;
+          font-style: normal;
+          
+        }
+        .msg{
+          font-family: "Anta", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          text-align: start;
+        }
+      }
+    }
   }
+  .row.input {
+    padding-top: 10px;
+  }
+}
+
+
+.col-sm-10::-webkit-scrollbar-thumb {
+  background-color: #888; /* колір фону ползунка */
+  border-radius: 5px; /* закругленість кутів ползунка */
+}
+
+.col-sm-10::-webkit-scrollbar {
+  width: 10px; /* ширина ползунка */
 }
