@@ -61,9 +61,9 @@ containerMsg.insertAdjacentHTML('beforeend', vmist);
 
 
 
-
-
-const ws = new WebSocket('ws://localhost:5555')
+const protocol = location.protocol === 'http:' ? 'ws' : 'wss'
+console.log(protocol,protocol.host)
+const ws = new WebSocket(`${protocol}://${location.host}`)
 
 ws.onmessage = (event) => {
   const { data } = JSON.parse(event.data);

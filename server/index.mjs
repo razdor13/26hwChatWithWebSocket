@@ -16,17 +16,17 @@ server.register(fastifyStatic,{
 })
 
 
-const port = process.env.PORT ||  5555
-const host = process.env.HOST  || 'localhost'
-
+const port = process.env.PORT ||  1234
+const host = process.env.HOST  || '0.0.0.0'
+console.log(host,port)
 server.listen({port,host},)
 .then(() => {
-    console.log(`http://localhost:5500/`)
+    console.log(`http://localhost:1234/`)
 })
 
 //websocket
-
-const wss = new WebSocketServer({port : 5555})
+console.log(server.server)
+const wss = new WebSocketServer({ server: server.server })
 
 wss.on('connection',client => { // event if client connection to server
     client.on('message', (data)=> {
@@ -40,5 +40,3 @@ wss.on('connection',client => { // event if client connection to server
         })
     })
 })
-
-
